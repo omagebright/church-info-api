@@ -73,7 +73,7 @@ const api = {
         "Date established": "1982",
         "Location": "Lagos State"
     },
-    "Cherubim and Seraphim": {
+    "Cherubim And Seraphim": {
         "Founder": "Moses Orimolade Tunolase",
         "Current senior pastor": {
             "general overseer": ""
@@ -216,7 +216,7 @@ app.get('/', (request, response) => {
 })
 
 app.get('/api/:churchName', (request, response) => {
-    if (request.params.churchName) {
+    if (api[request.params.churchName.toProperCase()]) {
         response.json(api[request.params.churchName.toProperCase()])
     } else {
         response.json(api['Church'])
