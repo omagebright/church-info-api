@@ -1,0 +1,1 @@
+alert("The cors are working")
