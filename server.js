@@ -6,8 +6,11 @@
 const { response } = require('express')
 const express = require('express')
 const app = express()
+const cors = require('cors')
 
 const PORT = 8000
+
+app.use(cors())
 
 String.prototype.toProperCase = function() {
     return this.replace(/\w\S*/g, function(txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
